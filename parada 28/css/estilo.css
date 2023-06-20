@@ -1,0 +1,47 @@
+.carousel {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+
+  .carousel-inner {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s;
+  }
+
+  .carousel-item {
+    flex-shrink: 0;
+    width: 33.33%;
+    height: 100%;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Animação do carrossel */
+  @keyframes carouselAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    33.33% {
+      transform: translateX(-100%);
+    }
+    66.66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Executa a animação do carrossel */
+  .carousel-inner.animate {
+    animation: carouselAnimation 5s infinite;
+  }
